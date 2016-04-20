@@ -4,85 +4,85 @@
     {
       "type": "Feature",
       "properties": {
-        "point_id":"1",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "value": 2
+        "value": 4,
+        "id": 4
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -6.6796875,
-          52.5897007687178
+          9.155731201171875,
+          45.47216977418841
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "point_id":"2",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "value": 20
+        "value": 99,
+        "id": 2
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.26953125,
-          48.3416461723746
+          9.195213317871094,
+          45.53689620055365
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "point_id":"3",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "value": 34
+        "value": 10,
+        "id": 1
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.0546875,
-          36.5978891330702
+          9.175300598144531,
+          45.49912810913339
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "point_id":"4",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "value": 5
+        "value": 6,
+        "id": 3
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -71.89453125,
-          28.92163128242129
+          9.231605529785156,
+          45.49190839157102
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "point_id":"5",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
-        "value": 10
+        "value": 7,
+        "id": 5
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.7890625,
-          58.17070248348612
+          9.116249084472656,
+          45.4391764115696
         ]
       }
     }
