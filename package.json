@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^7.0.0"
+    "eslint-config-airbnb": "^7.0.0",
+    "leaflet-choropleth": "file:leaflet-choropleth"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.2",

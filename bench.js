@@ -1,14 +1,14 @@
 var turf = require('turf');
 var fs = require('fs');
-// var testPoints = fs.readFileSync('./data/data.geojson');
-// testPoints = JSON.parse(testPoints);
+var testPoints = fs.readFileSync('./data/data.geojson');
+testPoints = JSON.parse(testPoints);
 
 // IDW takes in input
 // controlPoints = sampled points dataset
 // b = IDW power parameter
 // cellWidth = output grid cell size
 // units = miles or kilometers
-module.exports = function (controlPoints, b,cellWidth, units) {
+function IDW(controlPoints, b,cellWidth, units) {
 
    // create sampling point grid Z
   var extent = turf.extent(controlPoints);
@@ -40,6 +40,12 @@ module.exports = function (controlPoints, b,cellWidth, units) {
     console.log(Z.features[i]);
   }
 
-  return squareGrid;
 
+  // console.log(Z);
+  fs.writeFileSync('./pointGrid.geojson', JSON.stringify(Z));
+  fs.writeFileSync('./squareGrid.geojson', JSON.stringify(squareGrid));
 }
+
+IDW(testPoints,0.5,0.5,'kilometers')
+
+// module.exports.IDW = IDW;
