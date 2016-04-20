@@ -4,6 +4,7 @@
     {
       "type": "Feature",
       "properties": {
+        "point_id":"1",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
@@ -20,6 +21,7 @@
     {
       "type": "Feature",
       "properties": {
+        "point_id":"2",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
@@ -36,6 +38,7 @@
     {
       "type": "Feature",
       "properties": {
+        "point_id":"3",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
@@ -52,6 +55,7 @@
     {
       "type": "Feature",
       "properties": {
+        "point_id":"4",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
@@ -68,6 +72,7 @@
     {
       "type": "Feature",
       "properties": {
+        "point_id":"5",
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "",
