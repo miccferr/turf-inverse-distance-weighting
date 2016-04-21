@@ -1,5 +1,5 @@
 var distance = require('turf-distance');
-var squareG = require('turf-square-grid');
+var squareGrid = require('turf-square-grid');
 var centroid = require('turf-centroid');
 var extent = require('turf-extent');
 
@@ -12,36 +12,33 @@ var extent = require('turf-extent');
 * @param  {Number} b             Exponent to alter the distance weight
 * @param  {Number} cellWidth     The distance across each cell
 * @param  {String} units         Used in calculating cellWidth ('miles' or 'kilometers')
+* @return {FeatureCollection<Polygon>} grid A grid of polygons where each cell has an IDW value
 */
-module.exports =  function (controlPoints, b, cellWidth, units) {
-
+module.exports = function IDW(controlPoints, b, cellWidth, units) {
   // create a sample square grid
   // compared to a point grid helps visualizing the output (like a raster..)
-  var squareGrid = turf.squareGrid(turf.extent(controlPoints), cellWidth, units);
-
-  N = squareGrid.features.length;
-  idw_arr = [];
+  var samplingGrid = squareGrid(extent(controlPoints), cellWidth, units);
+  var N = samplingGrid.features.length;
 
   // for every sampling point..
-  for (i = 0; i < N; i++) {
-    zw = 0;
-    sw = 0;
+  for (var i = 0; i < N; i++) {
+    var w;
+    var zw = 0;
+    var sw = 0;
     // calculate the distance from each control point to cell's centroid
-    controlPoints.features.map(function (point) {
-        d = turf.distance(turf.centroid(squareGrid.features[i]), point, units)
-
-        if (d == 0) {
-          zw = point.properties.value;
-          return
-        }
-        w = 1.0 / Math.pow(d, b);
-        sw += w;
-        zw += w * point.properties.value
-      })
+    var calcParams = function(point){
+      var d = distance(centroid(samplingGrid.features[i]), point, units);
+      if (d === 0) {
+        zw = point.properties.value;
+        return;
+      }
+      w = 1.0 / Math.pow(d, b);
+      sw += w;
+      zw += w * point.properties.value;
+    };
+    controlPoints.features.map(calcParams(point))
       // write IDW value for each cell
-    squareGrid.features[i].properties.z = zw / sw
+    samplingGrid.features[i].properties.z = zw / sw;
   }
-
   return squareGrid;
-
-}
+};
