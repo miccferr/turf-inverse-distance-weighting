@@ -50,4 +50,4 @@ $ npm test
 ## Resources
 [1] _O’Sullivan, D., & Unwin, D. (2010). Geographic Information Analysis (2nd Edition). 432pp. Hoboken, New Jersey (USA): John Wiley & Sons, Inc._
 
-[2] _Xiao, N. (2014). GIS Algorithms, 336pp. SAGE Publications Ltd._
+[2] _Xiao, N. (2016). GIS Algorithms, 336pp. SAGE Publications Ltd._
