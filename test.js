@@ -2,12 +2,8 @@ var test = require('tape');
 var idw = require('./');
 var fs = require('fs');
 
-
-
-
 test('idw', function (t) {
   var testPoints = JSON.parse(fs.readFileSync('./data/data.geojson'));
-
 
   var idw1 = idw(testPoints,'value' , 0.5 , 1, 'kilometers');
   var idw2 = idw(testPoints,'value', 0.5 ,0.5, 'kilometers');
