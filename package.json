@@ -7,31 +7,24 @@
     "test": "tests"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^7.0.0",
-    "leaflet-choropleth": "file:leaflet-choropleth"
-  },
-  "devDependencies": {
-    "babel-eslint": "^6.0.2",
-    "eslint": "^2.8.0",
-    "eslint-config-airbnb": "^7.0.0",
-    "eslint-config-airbnb-es5": "^1.0.8",
-    "eslint-plugin-jsx-a11y": "^0.6.2",
-    "eslint-plugin-react": "^5.0.1",
-    "turf": "^2.0.2",
     "turf-centroid": "^1.1.3",
     "turf-distance": "^1.1.0",
     "turf-extent": "^1.0.4",
+    "turf-filter": "^1.0.1",
     "turf-square-grid": "^1.0.1"
   },
+  "devDependencies": {
+    "tape": "^4.5.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/miccferr/idw-js.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Michele Ferretti",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/miccferr/idw-js/issues"
   },
