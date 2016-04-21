@@ -4,7 +4,10 @@ Today a plain IDW alg. implemented in JS. Tomorrow a Turf.js package? Maybe?
 
 ### `IDW(controlPoints, valueField, b, cellWidth, units)`
 
-Takes a set of known points, a power parameter, a cell depth, a unit of measurement and returns a set of square polygons in a grid with a property IDW for each cell
+Takes a set of known sampled points, a property containing data value, an exponent parameter, a cell depth, a unit of measurement and returns a set of square polygons in a grid with an IDW value for each cell.
+
+Based on the Inverse Distance Weighted interpolation algorithm as covered in the following (among other) resources [1](OSullivan2010) [2](Xiao2014).
+
 
 
 ### Parameters
@@ -20,12 +23,13 @@ Takes a set of known points, a power parameter, a cell depth, a unit of measurem
 ### Example
 
 ```js
-// load a sample of test points
-var fs = require('fs');
 // load IDW
 var IDW = require('./index.js')
-var controlPoints = fs.readFileSync('./data/data.geojson');
-controlPoints = JSON.parse(controlPoints);
+
+// load a sample of test points
+var fs = require('fs');
+var controlPoints = JSON.parse(fs.readFileSync('./data/data.geojson'));
+
 // produce an interpolated surface
 var IDWSurface = IDW(controlPoints,'value', 0.5, 0.1,'kilometers');
 
@@ -42,3 +46,8 @@ Requires [nodejs](http://nodejs.org/).
 ```sh
 $ npm test
 ```
+
+## Resources
+[1] _O’Sullivan, D., & Unwin, D. (2010). Geographic Information Analysis (2nd Edition). 432pp. Hoboken, New Jersey (USA): John Wiley & Sons, Inc._
+
+[2] _Xiao, N. (2014). GIS Algorithms, 336pp. SAGE Publications Ltd._
