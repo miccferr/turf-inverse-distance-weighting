@@ -6,7 +6,7 @@ Today a plain IDW alg. implemented in JS. Tomorrow a Turf.js package? Maybe?
 
 Takes a set of known sampled points, a property containing data value, an exponent parameter, a cell depth, a unit of measurement and returns a set of square polygons in a grid with an IDW value for each cell.
 
-Based on the Inverse Distance Weighted interpolation algorithm as covered in the following (among other) resources [1](OSullivan2010) [2](Xiao2014).
+Based on the Inverse Distance Weighted interpolation algorithm as covered in the following (among other) resources: [1], [2].
 
 
 
