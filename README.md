@@ -2,7 +2,7 @@
 Today a plain IDW alg. implemented in JS. Tomorrow a Turf.js package? Maybe?
 
 
-### `IDW(controlPoints, b, cellWidth, units)`
+### `IDW(controlPoints, valueField, b, cellWidth, units)`
 
 Takes a set of known points, a power parameter, a cell depth, a unit of measurement and returns a set of square polygons in a grid with a property IDW for each cell
 
