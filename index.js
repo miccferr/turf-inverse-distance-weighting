@@ -17,7 +17,6 @@ var extent = require('turf-extent');
  * @return {FeatureCollection<Polygon>} grid A grid of polygons where each cell has an IDW value
  */
 module.exports = function (controlPoints, valueField, b, cellWidth, units) {
-
   // check if field containing data exists..
   var filtered = filter(controlPoints, valueField);
   //alternative method
@@ -36,22 +35,20 @@ module.exports = function (controlPoints, valueField, b, cellWidth, units) {
       controlPoints.features.map(function (point) {
         var d = distance(centroid(samplingGrid.features[i]), point, units);
         if (d === 0) {
-          zw = point.properties.value;
+          zw = point.properties[valueField];
           return;
         }
         w = 1.0 / Math.pow(d, b);
         sw += w;
-        zw += w * point.properties.value;
+        zw += w * point.properties[valueField];
       });
       // write IDW value for each grid cell
-      samplingGrid.features[i].properties.z = zw / sw;      
+      samplingGrid.features[i].properties.z = zw / sw;
     }
     return samplingGrid;
 
   } else {
     console.log('Specified Data Field is Missing');
   }
-
-
 
 };
