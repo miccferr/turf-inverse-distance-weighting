@@ -1,5 +1,15 @@
 # turf-idw
-Today a plain IDW alg. implemented in JS. Tomorrow a Turf.js package? Maybe?
+---Today a plain IDW alg. implemented in JS. Tomorrow a Turf.js package? Maybe?---
+
+# UPDATE:
+---
+The module has been accepted and is now officially part of TurfJs!
+You can find it on [Turf's repo](https://github.com/Turfjs/turf/tree/master/packages/turf-idw) or as a stand-alone module on [`npm`](https://www.npmjs.com/package/@turf/idw) thanks to @tmcw and @morganherlocker.
+
+
+Obligatory success gif:
+
+![](celebration.gif)
 
 
 ### `IDW(controlPoints, valueField, b, cellWidth, units)`
